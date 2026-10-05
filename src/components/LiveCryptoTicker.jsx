@@ -17,6 +17,7 @@ const INITIAL_COINS = [
     rank: 1,
     name: 'Bitcoin',
     symbol: 'BTC',
+    image: '/images/coins/btc.png',
     iconColor: '#f7931a',
     category: 'Layer 1',
     price: 94820.50,
@@ -31,6 +32,7 @@ const INITIAL_COINS = [
     rank: 2,
     name: 'Ethereum',
     symbol: 'ETH',
+    image: '/images/coins/eth.png',
     iconColor: '#627eea',
     category: 'Layer 1',
     price: 3450.20,
@@ -45,6 +47,7 @@ const INITIAL_COINS = [
     rank: 3,
     name: 'Solana',
     symbol: 'SOL',
+    image: '/images/coins/sol.png',
     iconColor: '#14f195',
     category: 'Layer 1',
     price: 198.75,
@@ -59,6 +62,7 @@ const INITIAL_COINS = [
     rank: 4,
     name: 'XRP',
     symbol: 'XRP',
+    image: '/images/coins/xrp.png',
     iconColor: '#23292f',
     category: 'Layer 1',
     price: 2.38,
@@ -73,6 +77,7 @@ const INITIAL_COINS = [
     rank: 5,
     name: 'BNB',
     symbol: 'BNB',
+    image: '/images/coins/bnb.png',
     iconColor: '#f3ba2f',
     category: 'DeFi',
     price: 642.10,
@@ -87,6 +92,7 @@ const INITIAL_COINS = [
     rank: 6,
     name: 'Cardano',
     symbol: 'ADA',
+    image: '/images/coins/ada.png',
     iconColor: '#0033ad',
     category: 'Layer 1',
     price: 0.84,
@@ -101,6 +107,7 @@ const INITIAL_COINS = [
     rank: 7,
     name: 'Avalanche',
     symbol: 'AVAX',
+    image: '/images/coins/avax.png',
     iconColor: '#e84142',
     category: 'Layer 1',
     price: 36.80,
@@ -115,6 +122,7 @@ const INITIAL_COINS = [
     rank: 8,
     name: 'NEAR Protocol',
     symbol: 'NEAR',
+    image: '/images/coins/near.png',
     iconColor: '#000000',
     category: 'AI & Big Data',
     price: 7.42,
@@ -129,6 +137,7 @@ const INITIAL_COINS = [
     rank: 9,
     name: 'Chainlink',
     symbol: 'LINK',
+    image: '/images/coins/link.png',
     iconColor: '#375bd2',
     category: 'DeFi',
     price: 21.65,
@@ -143,6 +152,7 @@ const INITIAL_COINS = [
     rank: 10,
     name: 'Render Network',
     symbol: 'RENDER',
+    image: '/images/coins/render.png',
     iconColor: '#e51e25',
     category: 'AI & Big Data',
     price: 9.85,
@@ -327,9 +337,19 @@ export default function LiveCryptoTicker({ onOpenAlert }) {
                   <td className="col-rank">{coin.rank}</td>
                   <td className="col-asset">
                     <div className="asset-info">
+                      <img 
+                        src={coin.image} 
+                        alt={coin.name} 
+                        className="asset-coin-img"
+                        loading="lazy"
+                        onError={(e) => {
+                          e.target.style.display = 'none';
+                          e.target.nextSibling.style.display = 'flex';
+                        }}
+                      />
                       <div 
                         className="asset-icon-circle"
-                        style={{ backgroundColor: coin.iconColor }}
+                        style={{ backgroundColor: coin.iconColor, display: 'none' }}
                       >
                         {coin.symbol.slice(0, 2)}
                       </div>

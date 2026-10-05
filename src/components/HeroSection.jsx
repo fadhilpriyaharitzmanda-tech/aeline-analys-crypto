@@ -16,14 +16,14 @@ export default function HeroSection({ onOpenAction }) {
 
       {/* CTA Buttons */}
       <div className="hero-actions">
-        <a 
+        <a
           href="#live-prices"
           className="btn-view-demo"
           id="btn-view-demo"
         >
           LIHAT LIVE TICKER
         </a>
-        <button 
+        <button
           className="btn-get-started"
           id="btn-get-started"
           onClick={() => onOpenAction('Get Started with Crypto Tracking')}
@@ -39,7 +39,7 @@ export default function HeroSection({ onOpenAction }) {
       <div className="hero-showcase-container">
         <div className="cards-curve-stage">
           <div className="cards-curve-track">
-            
+
             {/* Card 1: BTC/USDT Bar Chart */}
             <div className="curve-card card-pos-1">
               <div className="card-1-content">
@@ -83,9 +83,9 @@ export default function HeroSection({ onOpenAction }) {
             {/* Card 3: Photo of Woman with Profit Tags */}
             <div className="curve-card card-pos-3">
               <div className="card-3-content">
-                <img 
-                  src="/images/woman_green_shirt.jpg" 
-                  alt="Aeline Crypto Strategist" 
+                <img
+                  src="/images/woman_green_shirt.jpg"
+                  alt="Aeline Crypto Strategist"
                   className="card-photo-img"
                   loading="eager"
                 />
@@ -113,7 +113,7 @@ export default function HeroSection({ onOpenAction }) {
                   {/* Subtle Gridlines */}
                   <line x1="0" y1="25" x2="160" y2="25" stroke="#f1f5f9" strokeWidth="1" strokeDasharray="2 2" />
                   <line x1="0" y1="55" x2="160" y2="55" stroke="#f1f5f9" strokeWidth="1" strokeDasharray="2 2" />
-                  
+
                   {/* Area fill */}
                   <path
                     d="M 10 75 Q 40 65 70 50 T 120 30 T 150 15 L 150 85 L 10 85 Z"

@@ -28,13 +28,21 @@ export default function Modal({ isOpen, title, data, onClose }) {
             width: '44px',
             height: '44px',
             borderRadius: '50%',
-            background: '#d2ff28',
+            background: data?.image ? '#ffffff' : '#d2ff28',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            color: '#111'
+            color: '#111',
+            boxShadow: data?.image ? '0 2px 8px rgba(0,0,0,0.1)' : 'none',
+            overflow: 'hidden'
           }}>
-            {data ? <Bell size={22} /> : <Sparkles size={22} />}
+            {data?.image ? (
+              <img src={data.image} alt={data.name} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+            ) : data ? (
+              <Bell size={22} />
+            ) : (
+              <Sparkles size={22} />
+            )}
           </div>
           <div>
             <h3 style={{ fontSize: '18px', fontWeight: 800, color: '#111827', lineHeight: '1.3' }}>{title}</h3>

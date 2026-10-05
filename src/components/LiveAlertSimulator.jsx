@@ -60,7 +60,13 @@ export default function LiveAlertSimulator() {
                   type="button"
                   className={`sim-select-btn ${selectedCoin === coin ? 'active' : ''}`}
                   onClick={() => handleCoinChange(coin)}
+                  style={{ display: 'flex', alignItems: 'center', gap: '8px' }}
                 >
+                  <img 
+                    src={`/images/coins/${coin.toLowerCase()}.png`} 
+                    alt={coin} 
+                    style={{ width: '20px', height: '20px', borderRadius: '50%', objectFit: 'contain' }} 
+                  />
                   <span className="sim-btn-coin">{coin}</span>
                   <span className="sim-btn-price">{coinPresets[coin].current}</span>
                 </button>
